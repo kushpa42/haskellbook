@@ -1,3 +1,5 @@
+import Control.Applicative(liftA3)
+
 stops  = "pbtdkg"
 vowels = "aeiou"
 
@@ -15,3 +17,6 @@ nounVerbNouns = generate nouns verbs
 
 seekritFunc :: Fractional a => String -> a
 seekritFunc x = (sum . map (\_ -> 1) . concat $ words x) / (sum $ map (\_-> 1) (words x))
+
+combos :: [a] -> [b] -> [c] -> [(a, b, c)]
+combos = liftA3 (,,)
