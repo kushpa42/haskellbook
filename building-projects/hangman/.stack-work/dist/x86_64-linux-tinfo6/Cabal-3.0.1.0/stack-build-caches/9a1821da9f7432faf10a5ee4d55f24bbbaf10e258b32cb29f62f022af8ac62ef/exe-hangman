@@ -1,12 +1,12 @@
-/home/kush/cs/haskell/building-projects/hangman/hangman.cabal:
-  hash: 974cd15510b47c0ddc15ae3b00f1464362007e642d6498814a993e11c898081d
-  size: 638
-  modtime: 1595185631
-/home/kush/cs/haskell/building-projects/hangman/src/Main.hs:
-  hash: 0898dc6c8547269c1e0f3d90f2b20b9a7648add25ce8a2cbf7fa4ca5b0c4b258
-  size: 3909
-  modtime: 1595358555
-/home/kush/cs/haskell/building-projects/hangman/README.md:
+/home/kush/cs/haskellbook/building-projects/hangman/src/Main.hs:
+  hash: 9e8d452dd37b1312857c45c323dc34ff65329c413a93769e0cd656c2cc551ffc
+  size: 3961
+  modtime: 1596998694
+/home/kush/cs/haskellbook/building-projects/hangman/README.md:
   hash: 3c0956d91bc3154bb4e7030640bbf9a664b6f29beff4595b632f70d859bf0410
   size: 10
   modtime: 1595185273
+/home/kush/cs/haskellbook/building-projects/hangman/hangman.cabal:
+  hash: e6caf26ef943a6d16a3528051921acde1674f33e7e9fe119c016fd0f1d88d1b0
+  size: 701
+  modtime: 1596998722

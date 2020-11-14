@@ -7,9 +7,12 @@ import Data.List (intersperse)
 import System.Exit (exitSuccess)
 import System.Random (randomRIO)
 
+import Test.Hspec
+import Test.QuickCheck
+
 newtype WordList = WordList [String] deriving (Eq, Show)
 
-data Puzzle = Puzzle String [Maybe Char] [Char]
+data Puzzle = Puzzle String [Maybe Char] [Char] deriving (Eq)
 
 instance Show Puzzle where
   show (Puzzle _ discovered guessed) =
@@ -114,3 +117,45 @@ main = do
         word <- randomWord'
         let puzzle = freshPuzzle (fmap toLower word)
         runGame puzzle
+
+-- Tests
+prop_appendGuess :: String -> Char -> Bool
+prop_appendGuess s c = length newList > length oldList
+  where (Puzzle _ _ oldList) = puzzle
+        (Puzzle _ _ newList) = fillInCharacter puzzle c
+        puzzle               = freshPuzzle s
+
+prop_fillInCorrectGuess :: String -> Char -> Bool
+prop_fillInCorrectGuess s c = if elem c s then justLength newList >  justLength oldList
+                                          else justLength newList == justLength oldList
+  where (Puzzle _ oldList _) = puzzle
+        (Puzzle _ newList _) = fillInCharacter puzzle c
+        puzzle               = freshPuzzle s
+        justLength           = length . filter isJust
+
+
+runQuickCheck :: IO ()
+runQuickCheck = do
+    quickCheck prop_appendGuess
+    quickCheck prop_fillInCorrectGuess
+
+runHspec :: IO ()
+runHspec = hspec $ do
+    describe "handleGuess" $ do
+        it "guessing a character again should return same puzzle" $ do
+            let puzzle = (Puzzle "abcd" [] ['a']) in
+                do
+                    p <- handleGuess puzzle 'a'
+                    puzzle `shouldBe` p 
+
+        it "guessing a correct character should fill it in" $ do
+            let puzzle = (Puzzle "ab" [Nothing, Nothing] []) in
+                do
+                    p <- handleGuess puzzle 'a'
+                    p `shouldBe` (Puzzle "ab" [(Just 'a'), Nothing] ['a'])
+        
+        it "guessing an incorrect character should add to the guessed list" $ do
+            let puzzle = (Puzzle "ab" [Nothing, Nothing] []) in
+                do
+                    p <- handleGuess puzzle 'e'
+                    p `shouldBe` (Puzzle "ab" [Nothing, Nothing] ['e'])

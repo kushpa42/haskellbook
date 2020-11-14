@@ -29,12 +29,12 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/home/kush/cs/haskell/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/bin"
-libdir     = "/home/kush/cs/haskell/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/lib/x86_64-linux-ghc-8.8.3/hangman-0.1.0.0-8lm8x8L4V5aBbQx2uS95kz-hangman"
-dynlibdir  = "/home/kush/cs/haskell/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/lib/x86_64-linux-ghc-8.8.3"
-datadir    = "/home/kush/cs/haskell/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/share/x86_64-linux-ghc-8.8.3/hangman-0.1.0.0"
-libexecdir = "/home/kush/cs/haskell/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/libexec/x86_64-linux-ghc-8.8.3/hangman-0.1.0.0"
-sysconfdir = "/home/kush/cs/haskell/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/etc"
+bindir     = "/home/kush/cs/haskellbook/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/bin"
+libdir     = "/home/kush/cs/haskellbook/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/lib/x86_64-linux-ghc-8.8.3/hangman-0.1.0.0-EhB6K3HgqD0JGSsxBsAiRE-hangman"
+dynlibdir  = "/home/kush/cs/haskellbook/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/lib/x86_64-linux-ghc-8.8.3"
+datadir    = "/home/kush/cs/haskellbook/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/share/x86_64-linux-ghc-8.8.3/hangman-0.1.0.0"
+libexecdir = "/home/kush/cs/haskellbook/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/libexec/x86_64-linux-ghc-8.8.3/hangman-0.1.0.0"
+sysconfdir = "/home/kush/cs/haskellbook/building-projects/hangman/.stack-work/install/x86_64-linux-tinfo6/9a1821da9f7432faf10a5ee4d55f24bbbaf10e258b32cb29f62f022af8ac62ef/8.8.3/etc"
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "hangman_bindir") (\_ -> return bindir)
