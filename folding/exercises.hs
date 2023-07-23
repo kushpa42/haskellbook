@@ -6,7 +6,7 @@ vowels = "aeiou"
 generate :: [a] -> [b] -> [(a, b, a)]
 generate xs ys = [(x, y, z) | x <- xs, y <- ys, z <- xs]
 
-stopVowelStops  = generate stops vowels 
+stopVowelStops = generate stops vowels
 
 stopVowelStops2 = [(x, y, z) | (x, y, z) <- stopVowelStops, x == 'p'] 
 

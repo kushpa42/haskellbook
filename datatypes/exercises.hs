@@ -13,7 +13,6 @@ x = (+)
 g xs = x w 1
   where w = length xs
 
-
 identity a = a
 
 first (a, b) = a
